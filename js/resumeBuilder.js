@@ -73,11 +73,6 @@ var education = {
   ]
 };
 
-projects: array of objects with
-                  title: string 
-                  dates: string (works with a hyphen between them)
-                  description: string
-                  images: array with string urls
 var projects = {
   "projects" : [
   {
