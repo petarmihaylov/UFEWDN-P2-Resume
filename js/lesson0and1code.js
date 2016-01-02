@@ -20,10 +20,6 @@ var formattedSkill2 = HTMLskills.replace("%data%", bio.skills[2]);
 // Work Experience
 var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[0].employer);
 
-// Header - Display
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-
 // Contact Info - Display
 $("#topContacts").append(formattedContactMobile);
 $("#topContacts").append(formattedContactEmail);
@@ -33,12 +29,6 @@ $("#topContacts").append(formattedContactLocation);
 // Bio - Display
 $("#header").append(formattedWelcomeMsg);
 $("#header").append(formattedBioPic);
-
-// Skills - Display
-$("#header").append(HTMLskillsStart);
-$("#skills").append(formattedSkill0);
-$("#skills").append(formattedSkill1);
-$("#skills").append(formattedSkill2);
 
 // Work Experience - Display
 $("#workExperience").append(HTMLworkStart);
