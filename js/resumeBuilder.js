@@ -12,15 +12,15 @@ var bio = {
     "github": "petarmihaylov",
     "location": "North Lauderdale, FL"
   },
+  "welcomeMessage": "Welcome to my Interactive Resume",
   "skills": ["HTML5", "CSS3", "JavaScript"],
-  "bioPic": "https://secure.gravatar.com/avatar/0eb64bd927318821e4494ec004cd5623?size=400px",
-  "welcomeMsg": "Welcome to my Interactive Resume"
+  "bioPic": "https://secure.gravatar.com/avatar/0eb64bd927318821e4494ec004cd5623?size=400px"
 };
 
 bio.displayContacts = function (contactType) {
   var contact = HTMLcontactGeneric.replace("%contact%", contactType);
-  $("#topContacts").append(contact.replace("%data%", bio.contacts[contactType]));
-  $("#footerContacts").append(contact.replace("%data%", bio.contacts[contactType]));
+  $("#topContacts").append(contact.replace("%data%", obfuscateContact(bio.contacts[contactType])));
+  $("#footerContacts").append(contact.replace("%data%", obfuscateContact(bio.contacts[contactType])));
 }
 
 
@@ -81,7 +81,7 @@ var education = {
       "location": "Boca Raton, FL",
       "degree": "Bachelor's Degree",
       "majors": ["International Economics"],
-      "dates": 2009,
+      "dates": "May 2005 - December 2008",
       "url": "http://www.fau.edu"
     },
     {
@@ -89,7 +89,7 @@ var education = {
       "location": "Coconut Creek, FL",
       "degree": "Associates Degree",
       "majors": ["Computer Science"],
-      "dates": 2012,
+      "dates": "December 2012 - May 2013",
       "url": "http://www.broward.edu"
     }
   ],
@@ -97,13 +97,13 @@ var education = {
     {
       "title": "Intro to HTML and CSS",
       "school": "Udacity",
-      "date": 2015,
+      "date": "December 2015",
       "url": "http://udacity.com"
     },
     {
       "title": "The Complete Web Developer Course",
       "school": "Udemy",
-      "date": 2015,
+      "date": "May 2015",
       "url": "https://www.udemy.com/complete-web-developer-course/learn/"
     }
   ]
@@ -219,6 +219,24 @@ function orName() {
   return originalName;
 }
 
+// Obfuscatext for the e-mail address and other contacts
+function obfuscateContact(str) {
+  // Generate a rendom number of segments
+  var segments = Math.floor((Math.random() * (str.length - 3) + 1)); 
+  var charSplit = Math.floor((str.length / segments) + 2);
+  var lastChar = 0;
+  var parts = [];
+
+  while ((lastChar + charSplit) < (str.length - 1)) {
+    parts.push(str.slice(lastChar, (lastChar + charSplit)) + "<span>null</span>"); 
+    lastChar = lastChar + charSplit;
+  }
+
+  parts.push(str.slice((lastChar)));
+
+  return "<span class=\"obfuscate\">" + parts.join("") + "</span>"
+}
+
 // INSER ELEMENTS
 // Header
 $("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
@@ -235,7 +253,7 @@ for (key in bio.contacts) {
 
 // Header - append
 $("#header").append(HTMLbioPic.replace("%data%", bio.bioPic));
-$("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg));
+$("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
 
 // Skills
 bio.displaySkills();

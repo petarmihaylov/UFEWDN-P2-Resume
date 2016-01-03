@@ -127,9 +127,7 @@ a {
   background-color: #4a4a4a;
 }
 
-/* TODO: Replace with image later */
 #header {
-  /*background-color: #484848;*/
   background-color: #0F68B2;
 }
 
@@ -170,9 +168,12 @@ span {
   text-align: center;
 }
 
-/* USER DEFINED STYLES */
 #originalizeButton {
   display: none;
+}
+
+.obfuscate span { 
+  display: none; 
 }
 
 /* Media queries to handle various device widths */
