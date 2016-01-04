@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     'gh-pages': {
-    src: ['css/*.css', 'images/**/*', 'js/*.js', 'index.html']
+    src: ['css/*.css', 'images/**/*', 'js/*.js', 'index.html', 'problemsets/**/*']
     //src: ['**'] //mathces all files in the cwd (current working directory)()
   }
   });
