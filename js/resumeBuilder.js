@@ -264,7 +264,7 @@ function orName() {
 * @param {string} str - the string to obfuscated 
 */
 function obfuscateContact(str) {
-  // Inspired by: https://perishablepress.com/best-method-for-email-obfuscation/
+  // Inspired by: https://perishablepress.com/best-method-for-email-obfuscation/rr
   // Generate a rendom number of segments
   var segments = Math.floor((Math.random() * (str.length - 3) + 1)); 
   var charSplit = Math.floor((str.length / segments) + 2);
