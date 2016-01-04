@@ -13,13 +13,21 @@ var bio = {
   "bioPic": "https://secure.gravatar.com/avatar/0eb64bd927318821e4494ec004cd5623?size=400px"
 };
 
+/**
+* @description Displays the contacts information
+* @constructor
+* @param {string} contactType - The tipe of contact to be displayed
+*/
 bio.displayContacts = function (contactType) {
   var contact = HTMLcontactGeneric.replace("%contact%", contactType);
   $("#topContacts").append(contact.replace("%data%", obfuscateContact(bio.contacts[contactType])));
   $("#footerContacts").append(contact.replace("%data%", obfuscateContact(bio.contacts[contactType])));
 }
 
-
+/**
+* @description Displays the skills in the bio object
+* @constructor
+*/
 bio.displaySkills = function () {
   if (bio.skills.length > 0) {
     $("#header").append(HTMLskillsStart);
@@ -51,6 +59,13 @@ var work = {
   ]
 };
 
+/**
+* @description Displays the work experience
+* @constructor
+* @param {object} element - content of the index (dependings on the object on which this function is executed)
+* @param {integer} index - the current index
+* @param {array} array - the array on which this function is called
+*/
 work.display = function (element, index, array) {
   $("#workExperience").append(HTMLworkStart);
   // Chrome automatically adds a </a> tag after the HTMLworkEmployer append, so Employer and Title need to be concatenated and added with one append()
@@ -105,6 +120,13 @@ var education = {
   ]
 };
 
+/**
+* @description Displays the higher education schools experience
+* @constructor
+* @param {object} element - content of the index (dependings on the object on which this function is executed)
+* @param {integer} index - the current index
+* @param {array} array - the array on which this function is called
+*/
 education.displaySchools = function (element, index, array) {
   $("#education").append(HTMLschoolStart);
   $(".education-entry:last").append(
@@ -127,6 +149,13 @@ education.displaySchools = function (element, index, array) {
   };
 }
 
+/**
+* @description Displays the completed online courses
+* @constructor
+* @param {object} element - content of the index (dependings on the object on which this function is executed)
+* @param {integer} index - the current index
+* @param {array} array - the array on which this function is called
+*/
 education.displayOnlineCourses = function (element, index, array) {
   $("#education").append(HTMLschoolStart);
   $(".education-entry:last").append(
@@ -170,6 +199,13 @@ var projects = {
   ]
 };
 
+/**
+* @description Displays the completed projects
+* @constructor
+* @param {object} element - content of the index (dependings on the object on which this function is executed)
+* @param {integer} index - the current index
+* @param {array} array - the array on which this function is called
+*/
 projects.display = function(element, index, array) {
   $("#projects").append(HTMLprojectStart);
   $(".project-entry:last").append(
@@ -191,6 +227,10 @@ projects.display = function(element, index, array) {
 
 
 // Other Functions
+/**
+* @description Internationalizes the name where it capitalized the first letter of the firs name and the entire last name. Hides the Internationalize button and makes the Originalize button available, so the name can be returned to the original way it was capitalized.
+* @constructor
+*/
 function inName() {
   var names = bio.name.trim().split(" ");
   var firstName = names[0].toLowerCase();
@@ -205,6 +245,10 @@ function inName() {
   return internationalizedName;
 }
 
+/**
+* @description Returns the internationalized name back to the original. Hides the Originalize button and makes the Internationalized button available again, so the name can again be internationalized.
+* @constructor
+*/
 function orName() {
   var originalName = bio.name;
 
@@ -214,7 +258,11 @@ function orName() {
   return originalName;
 }
 
-// Obfuscatext for the e-mail address and other contacts
+/**
+* @description Obfuscates a string by encapsulating it in a obfuscate class (which is set o display: none trough css) and inserts random <span>***</span> elements at random intervals in the e-mail address where *** represents a random string of characters between 1 and 16. The purpose of the fuction is to make it more difficult for contact information to be scraped off the page by a spambot.
+* @constructor
+* @param {string} str - the string to obfuscated 
+*/
 function obfuscateContact(str) {
   // Generate a rendom number of segments
   var segments = Math.floor((Math.random() * (str.length - 3) + 1)); 
@@ -223,7 +271,8 @@ function obfuscateContact(str) {
   var parts = [];
 
   while ((lastChar + charSplit) < (str.length - 1)) {
-    parts.push(str.slice(lastChar, (lastChar + charSplit)) + "<span>null</span>"); 
+    // The Math pert helps generate a random string of characters between 1 and 16 so the pattern is harder to discern. 
+    parts.push(str.slice(lastChar, (lastChar + charSplit)) + "<span>" + Math.random().toString(36).substring((Math.random() * 16) + 1) + "</span>"); 
     lastChar = lastChar + charSplit;
   }
 
@@ -232,7 +281,7 @@ function obfuscateContact(str) {
   return "<span class=\"obfuscate\">" + parts.join("") + "</span>"
 }
 
-// INSER ELEMENTS
+// INSERT ELEMENTS
 // Header
 $("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
 $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
