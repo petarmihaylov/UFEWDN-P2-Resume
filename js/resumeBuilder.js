@@ -1,16 +1,16 @@
 // Bio
 var bio = {
-  "name": "Petar Mihaylov",
-  "role": "Web Developer",
-  "contacts": {
-    "mobile": "561.342.1678",
-    "email": "petar.m@studio350.com",
-    "github": "petarmihaylov",
-    "location": "North Lauderdale, FL"
+  'name': 'Petar Mihaylov',
+  'role': 'Web Developer',
+  'contacts': {
+    'mobile': '561.342.1678',
+    'email': 'petar.m@studio350.com',
+    'github': 'petarmihaylov',
+    'location': 'North Lauderdale, FL'
   },
-  "welcomeMessage": "Welcome to my Interactive Resume",
-  "skills": ["HTML5", "CSS3", "JavaScript"],
-  "bioPic": "https://secure.gravatar.com/avatar/0eb64bd927318821e4494ec004cd5623?size=400px"
+  'welcomeMessage': 'Welcome to my Interactive Resume',
+  'skills': ['HTML5', 'CSS3', 'JavaScript'],
+  'bioPic': 'https://secure.gravatar.com/avatar/0eb64bd927318821e4494ec004cd5623?size=400px'
 };
 
 /**
@@ -19,9 +19,9 @@ var bio = {
 * @param {string} contactType - The tipe of contact to be displayed
 */
 bio.displayContacts = function (contactType) {
-  var contact = HTMLcontactGeneric.replace("%contact%", contactType);
-  $("#topContacts").append(contact.replace("%data%", obfuscateContact(bio.contacts[contactType])));
-  $("#footerContacts").append(contact.replace("%data%", obfuscateContact(bio.contacts[contactType])));
+  var contact = HTMLcontactGeneric.replace('%contact%', contactType);
+  $('#topContacts').append(contact.replace('%data%', obfuscateContact(bio.contacts[contactType])));
+  $('#footerContacts').append(contact.replace('%data%', obfuscateContact(bio.contacts[contactType])));
 }
 
 /**
@@ -30,31 +30,31 @@ bio.displayContacts = function (contactType) {
 */
 bio.displaySkills = function () {
   if (bio.skills.length > 0) {
-    $("#header").append(HTMLskillsStart);
+    $('#header').append(HTMLskillsStart);
     // An example of using a for loop to iterate over items in an array
     for (var indexCount = 0; indexCount < bio.skills.length; indexCount++) {
-      $("#skills").append(
-        HTMLskills.replace("%data%", bio.skills[indexCount]));  
+      $('#skills').append(
+        HTMLskills.replace('%data%', bio.skills[indexCount]));  
     }
   };
 }
 
 // Work Experience
 var work = {
-  "jobs": [
+  'jobs': [
     {
-      "employer": "Depace Insurance and Financial Services, Inc", 
-      "title": "Account Manager (Auto and Personal Umbrella)",
-      "location": "Coral Springs, FL",
-      "dates": "October 2012 - May 2015",
-      "description": "Managed client's personal auto and umbrella insurance needs. Provided exceptional service through personalized attention and individual recommendations. Managed over 300 auto and umbrella policies each year."
+      'employer': 'Depace Insurance and Financial Services, Inc', 
+      'title': 'Account Manager (Auto and Personal Umbrella)',
+      'location': 'Coral Springs, FL',
+      'dates': 'October 2012 - May 2015',
+      'description': 'Managed client\'s personal auto and umbrella insurance needs. Provided exceptional service through personalized attention and individual recommendations. Managed over 300 auto and umbrella policies each year.'
     },
     {
-      "employer": "Ultimate Software",
-      "title": "Rapid Response Professional",
-      "location": "Weston, FL",
-      "dates": "May 2015 - Present",
-      "description": "Helped clients troubleshoot payroll critical issues. Ensured that customers achieve their business goals by helping them navigate and configure, as well as troubleshoot and maintain their Ultipro Core product."
+      'employer': 'Ultimate Software',
+      'title': 'Rapid Response Professional',
+      'location': 'Weston, FL',
+      'dates': 'May 2015 - Present',
+      'description': 'Helped clients troubleshoot payroll critical issues. Ensured that customers achieve their business goals by helping them navigate and configure, as well as troubleshoot and maintain their Ultipro Core product.'
     }
   ]
 };
@@ -67,55 +67,55 @@ var work = {
 * @param {array} array - the array on which this function is called
 */
 work.display = function (element, index, array) {
-  $("#workExperience").append(HTMLworkStart);
+  $('#workExperience').append(HTMLworkStart);
   // Chrome automatically adds a </a> tag after the HTMLworkEmployer append, so Employer and Title need to be concatenated and added with one append()
-  $(".work-entry:last").append(
-    HTMLworkEmployer.replace("%data%", work.jobs[index].employer) +
-    HTMLworkTitle.replace("%data%", work.jobs[index].title)
+  $('.work-entry:last').append(
+    HTMLworkEmployer.replace('%data%', work.jobs[index].employer) +
+    HTMLworkTitle.replace('%data%', work.jobs[index].title)
     );
-  $(".work-entry:last").append(
-    HTMLworkDates.replace("%data%", work.jobs[index].dates)
+  $('.work-entry:last').append(
+    HTMLworkDates.replace('%data%', work.jobs[index].dates)
     );
-  $(".work-entry:last").append(
-    HTMLworkLocation.replace("%data%", work.jobs[index].location)
+  $('.work-entry:last').append(
+    HTMLworkLocation.replace('%data%', work.jobs[index].location)
     );
-  $(".work-entry:last").append(
-    HTMLworkDescription.replace("%data%", work.jobs[index].description)
+  $('.work-entry:last').append(
+    HTMLworkDescription.replace('%data%', work.jobs[index].description)
     );
 }
 
 // Edication
 var education = {
-  "schools": [
+  'schools': [
     {
-      "name": "Flroida Atlantic University",
-      "location": "Boca Raton, FL",
-      "degree": "Bachelor's Degree",
-      "majors": ["International Economics"],
-      "dates": "May 2005 - December 2008",
-      "url": "http://www.fau.edu"
+      'name': 'Flroida Atlantic University',
+      'location': 'Boca Raton, FL',
+      'degree': 'Bachelor\'s Degree',
+      'majors': ['International Economics'],
+      'dates': 'May 2005 - December 2008',
+      'url': 'http://www.fau.edu'
     },
     {
-      "name": "Broward College",
-      "location": "Coconut Creek, FL",
-      "degree": "Associates Degree",
-      "majors": ["Computer Science"],
-      "dates": "December 2012 - May 2013",
-      "url": "http://www.broward.edu"
+      'name': 'Broward College',
+      'location': 'Coconut Creek, FL',
+      'degree': 'Associates Degree',
+      'majors': ['Computer Science'],
+      'dates': 'December 2012 - May 2013',
+      'url': 'http://www.broward.edu'
     }
   ],
-  "onlineCourses": [
+  'onlineCourses': [
     {
-      "title": "Intro to HTML and CSS",
-      "school": "Udacity",
-      "date": "December 2015",
-      "url": "http://udacity.com"
+      'title': 'Intro to HTML and CSS',
+      'school': 'Udacity',
+      'date': 'December 2015',
+      'url': 'http://udacity.com'
     },
     {
-      "title": "The Complete Web Developer Course",
-      "school": "Udemy",
-      "date": "May 2015",
-      "url": "https://www.udemy.com/complete-web-developer-course/learn/"
+      'title': 'The Complete Web Developer Course',
+      'school': 'Udemy',
+      'date': 'May 2015',
+      'url': 'https://www.udemy.com/complete-web-developer-course/learn/'
     }
   ]
 };
@@ -128,23 +128,23 @@ var education = {
 * @param {array} array - the array on which this function is called
 */
 education.displaySchools = function (element, index, array) {
-  $("#education").append(HTMLschoolStart);
-  $(".education-entry:last").append(
-    HTMLschoolName.replace("%data%", education.schools[index].name) +
-    HTMLschoolDegree.replace("%data%", education.schools[index].degree)
+  $('#education').append(HTMLschoolStart);
+  $('.education-entry:last').append(
+    HTMLschoolName.replace('%data%', education.schools[index].name) +
+    HTMLschoolDegree.replace('%data%', education.schools[index].degree)
   );
-  $(".education-entry:last").append(
-    HTMLschoolLocation.replace("%data%", education.schools[index].location)
+  $('.education-entry:last').append(
+    HTMLschoolLocation.replace('%data%', education.schools[index].location)
   );
-  $(".education-entry:last").append(
-    HTMLschoolDates.replace("%data%", education.schools[index].dates)
+  $('.education-entry:last').append(
+    HTMLschoolDates.replace('%data%', education.schools[index].dates)
   );
 
   if (education.schools[index].majors.length > 0) {
     // An example of using a for loop to iterate over items in an array
     for (var indexCount = 0; indexCount < education.schools[index].majors.length; indexCount++) {
-      $(".education-entry:last").append(
-        HTMLschoolMajor.replace("%data%", education.schools[index].majors[indexCount]));  
+      $('.education-entry:last').append(
+        HTMLschoolMajor.replace('%data%', education.schools[index].majors[indexCount]));  
     }
   };
 }
@@ -157,43 +157,43 @@ education.displaySchools = function (element, index, array) {
 * @param {array} array - the array on which this function is called
 */
 education.displayOnlineCourses = function (element, index, array) {
-  $("#education").append(HTMLschoolStart);
-  $(".education-entry:last").append(
-    HTMLonlineTitle.replace("%data%", education.onlineCourses[index].title) +
-    HTMLonlineSchool.replace("%data%", education.onlineCourses[index].school)
+  $('#education').append(HTMLschoolStart);
+  $('.education-entry:last').append(
+    HTMLonlineTitle.replace('%data%', education.onlineCourses[index].title) +
+    HTMLonlineSchool.replace('%data%', education.onlineCourses[index].school)
   );
-  $(".education-entry:last").append(
-    HTMLonlineDates.replace("%data%", education.onlineCourses[index].date)
+  $('.education-entry:last').append(
+    HTMLonlineDates.replace('%data%', education.onlineCourses[index].date)
   );
-  $(".education-entry:last").append(
-    HTMLonlineURL.replace("%data%", education.onlineCourses[index].url)
+  $('.education-entry:last').append(
+    HTMLonlineURL.replace('%data%', education.onlineCourses[index].url)
   );
 }
 
 var projects = {
-  "projects" : [
+  'projects' : [
   {
-    "title": "Yencies.com",
-    "dates": "January 2013",
-    "description": "Created a WordPress powered promotional website for Yencies - a company that makes hand made jewelry and accessories. The website promotes their hand-made, unique jewelry designs.",
-    "images": [
-      "images/projects/yencies.com-thumb.png"
+    'title': 'Yencies.com',
+    'dates': 'January 2013',
+    'description': 'Created a WordPress powered promotional website for Yencies - a company that makes hand made jewelry and accessories. The website promotes their hand-made, unique jewelry designs.',
+    'images': [
+      'images/projects/yencies.com-thumb.png'
     ]
   },
   {
-    "title": "MishelFit.com",
-    "dates": "May 2015",
-    "description": "Fully custom and responsive design of a landing page for MishelFit.com. Simple, elegant, and effective. The page includes a newsletter sign up form and an insagram feed.",
-    "images": [
-      "images/projects/mishelfit.com-thumb.png"
+    'title': 'MishelFit.com',
+    'dates': 'May 2015',
+    'description': 'Fully custom and responsive design of a landing page for MishelFit.com. Simple, elegant, and effective. The page includes a newsletter sign up form and an insagram feed.',
+    'images': [
+      'images/projects/mishelfit.com-thumb.png'
     ]
   },
   {
-    "title": "QuoteRush.com",
-    "dates": "December 2014",
-    "description": "Fully custom and responsive design for QuoteRush.com. Redesigned the entire website from the ground up. The customer maintains the website and has now made changes to the original design and content.",
-    "images": [
-      "images/projects/quoterush.com-thumb.png",
+    'title': 'QuoteRush.com',
+    'dates': 'December 2014',
+    'description': 'Fully custom and responsive design for QuoteRush.com. Redesigned the entire website from the ground up. The customer maintains the website and has now made changes to the original design and content.',
+    'images': [
+      'images/projects/quoterush.com-thumb.png',
     ]
   }
   ]
@@ -207,20 +207,20 @@ var projects = {
 * @param {array} array - the array on which this function is called
 */
 projects.display = function(element, index, array) {
-  $("#projects").append(HTMLprojectStart);
-  $(".project-entry:last").append(
-    HTMLprojectTitle.replace("%data%", projects.projects[index].title)
+  $('#projects').append(HTMLprojectStart);
+  $('.project-entry:last').append(
+    HTMLprojectTitle.replace('%data%', projects.projects[index].title)
   );
-  $(".project-entry:last").append(
-    HTMLprojectDates.replace("%data%", projects.projects[index].dates)
+  $('.project-entry:last').append(
+    HTMLprojectDates.replace('%data%', projects.projects[index].dates)
   );
-  $(".project-entry:last").append(
-    HTMLprojectDescription.replace("%data%", projects.projects[index].description)
+  $('.project-entry:last').append(
+    HTMLprojectDescription.replace('%data%', projects.projects[index].description)
   );
 
   for (var image = 0; image < projects.projects[index].images.length; image++) {
-    $(".project-entry:last").append(
-    HTMLprojectImage.replace("%data%", projects.projects[index].images[image])
+    $('.project-entry:last').append(
+    HTMLprojectImage.replace('%data%', projects.projects[index].images[image])
     );
   };
 }
@@ -232,15 +232,15 @@ projects.display = function(element, index, array) {
 * @constructor
 */
 function inName() {
-  var names = bio.name.trim().split(" ");
+  var names = bio.name.trim().split(' ');
   var firstName = names[0].toLowerCase();
   var firstName = firstName.charAt(0).toUpperCase() + firstName.slice(1);
   var lastName = names[1].toUpperCase();
   var formattedNames = [firstName, lastName];
-  var internationalizedName = formattedNames.join(" ");
+  var internationalizedName = formattedNames.join(' ');
 
-  $("#internationalizeButton").css({"display": "none"});
-  $("#originalizeButton").css({"display": "inline"});
+  $('#internationalizeButton').css({'display': 'none'});
+  $('#originalizeButton').css({'display': 'inline'});
 
   return internationalizedName;
 }
@@ -252,8 +252,8 @@ function inName() {
 function orName() {
   var originalName = bio.name;
 
-  $("#internationalizeButton").css({"display": "inline"});
-  $("#originalizeButton").css({"display": "none"});
+  $('#internationalizeButton').css({'display': 'inline'});
+  $('#originalizeButton').css({'display': 'none'});
 
   return originalName;
 }
@@ -272,21 +272,21 @@ function obfuscateContact(str) {
 
   while ((lastChar + charSplit) < (str.length - 1)) {
     // The Math pert helps generate a random string of characters between 1 and 16 so the pattern is harder to discern. 
-    parts.push(str.slice(lastChar, (lastChar + charSplit)) + "<span>" + Math.random().toString(36).substring((Math.random() * 16) + 1) + "</span>"); 
+    parts.push(str.slice(lastChar, (lastChar + charSplit)) + '<span>' + Math.random().toString(36).substring((Math.random() * 16) + 1) + '</span>'); 
     lastChar = lastChar + charSplit;
   }
 
   parts.push(str.slice((lastChar)));
 
-  return "<span class=\"obfuscate\">" + parts.join("") + "</span>"
+  return '<span class="obfuscate">' + parts.join('') + '</span>'
 }
 
 // INSERT ELEMENTS
 // Header
-$("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
-$("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
-$("#header").prepend(internationalizeButton);
-$("#header").prepend(originalizeButton);
+$('#header').prepend(HTMLheaderRole.replace('%data%', bio.role));
+$('#header').prepend(HTMLheaderName.replace('%data%', bio.name));
+$('#header').prepend(internationalizeButton);
+$('#header').prepend(originalizeButton);
 
 // Contacts (within header)
 for (key in bio.contacts) {
@@ -296,8 +296,8 @@ for (key in bio.contacts) {
 }
 
 // Header - append
-$("#header").append(HTMLbioPic.replace("%data%", bio.bioPic));
-$("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
+$('#header').append(HTMLbioPic.replace('%data%', bio.bioPic));
+$('#header').append(HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage));
 
 // Skills
 bio.displaySkills();
@@ -310,8 +310,8 @@ projects.projects.forEach(projects.display);
 
 // Education
 education.schools.forEach(education.displaySchools);
-$("#education").append(HTMLonlineClasses);
+$('#education').append(HTMLonlineClasses);
 education.onlineCourses.forEach(education.displayOnlineCourses);
 
 // Map
-$("#mapDiv").append(googleMap);
+$('#mapDiv').append(googleMap);
