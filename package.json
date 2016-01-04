@@ -1,0 +1,8 @@
+{
+  "name": "UFEWDN-P2-Resume",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-gh-pages": "^1.0.0"
+  }
+}
