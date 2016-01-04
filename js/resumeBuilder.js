@@ -1,7 +1,3 @@
-/*
-This is empty on purpose! Your code to build the resume will go here.
-*/
-
 // Bio
 var bio = {
   "name": "Petar Mihaylov",
@@ -43,14 +39,14 @@ var work = {
       "title": "Account Manager (Auto and Personal Umbrella)",
       "location": "Coral Springs, FL",
       "dates": "October 2012 - May 2015",
-      "description": "Manager client's personal auto and umbrella insurance needs."
+      "description": "Managed client's personal auto and umbrella insurance needs. Provided exceptional service through personalized attention and individual recommendations. Managed over 300 auto and umbrella policies each year."
     },
     {
       "employer": "Ultimate Software",
       "title": "Rapid Response Professional",
       "location": "Weston, FL",
       "dates": "May 2015 - Present",
-      "description": "Helped clients troubleshoot payroll critical issues."
+      "description": "Helped clients troubleshoot payroll critical issues. Ensured that customers achieve their business goals by helping them navigate and configure, as well as troubleshoot and maintain their Ultipro Core product."
     }
   ]
 };
@@ -150,16 +146,15 @@ var projects = {
   {
     "title": "Yencies.com",
     "dates": "January 2013",
-    "description": "Created a WordPress powered promotional website for Yencies - a company that makes hand made jewelry and accessories.",
+    "description": "Created a WordPress powered promotional website for Yencies - a company that makes hand made jewelry and accessories. The website promotes their hand-made, unique jewelry designs.",
     "images": [
-      "images/projects/yencies.com-thumb.png",
-      "images/projects/yencies.com-branding-banner.png"
+      "images/projects/yencies.com-thumb.png"
     ]
   },
   {
     "title": "MishelFit.com",
     "dates": "May 2015",
-    "description": "Fully custom and responsive design of a landing page for MishelFit.com",
+    "description": "Fully custom and responsive design of a landing page for MishelFit.com. Simple, elegant, and effective. The page includes a newsletter sign up form and an insagram feed.",
     "images": [
       "images/projects/mishelfit.com-thumb.png"
     ]
