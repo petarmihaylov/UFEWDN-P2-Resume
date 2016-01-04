@@ -293,6 +293,7 @@ for (key in bio.contacts) {
   if (bio.contacts.hasOwnProperty(key)) {
     bio.displayContacts(key);
   }
+  //bio.contacts.hasOwnProperty(key) ? bio.displayContacts(key) : console.log("Nothing to Show"); //equivalent to above statement
 }
 
 // Header - append
