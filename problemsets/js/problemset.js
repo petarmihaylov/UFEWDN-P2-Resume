@@ -84,26 +84,26 @@ console.log(alphabetizer(moonWalkers));
 // return an array of their strings.
 function ruleList(results) {
   // Your code goes here!
-  var ruleList = [];
+  var ruleListArray = [];
   for (var rule in psinsights.formattedResults.ruleResults) {
     if (psinsights.formattedResults.ruleResults.hasOwnProperty(rule)) {
-      ruleList.push(psinsights.formattedResults.ruleResults[rule].localizedRuleName);
+      ruleListArray.push(psinsights.formattedResults.ruleResults[rule].localizedRuleName);
     }
   }
-  return ruleList;
+  return ruleListArray;
 }
 
 // Iterate through pageStats in the psiResults object and 
 // return the total number of bytes to load the website.
 function totalBytes(results) {
   // Your code goes here!
-  var totalBytes = 0;
+  var totalBytesCalc = 0;
   for (var pageStat in psinsights.pageStats) {
     if (psinsights.pageStats.hasOwnProperty(pageStat)) {
-      totalBytes = totalBytes + parseInt(psinsights.pageStats[pageStat], 10)
+      totalBytesCalc = totalBytesCalc + parseInt(psinsights.pageStats[pageStat], 10);
     }
   }
-  return totalBytes;
+  return totalBytesCalc;
 }
 
 // Below, you'll find a sample PS Insights JSON
