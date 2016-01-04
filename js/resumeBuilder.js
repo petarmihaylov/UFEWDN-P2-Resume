@@ -264,6 +264,7 @@ function orName() {
 * @param {string} str - the string to obfuscated 
 */
 function obfuscateContact(str) {
+  // Inspired by: https://perishablepress.com/best-method-for-email-obfuscation/
   // Generate a rendom number of segments
   var segments = Math.floor((Math.random() * (str.length - 3) + 1)); 
   var charSplit = Math.floor((str.length / segments) + 2);
@@ -272,6 +273,7 @@ function obfuscateContact(str) {
 
   while ((lastChar + charSplit) < (str.length - 1)) {
     // The Math pert helps generate a random string of characters between 1 and 16 so the pattern is harder to discern. 
+    // Source: http://stackoverflow.com/questions/1349404/generate-a-string-of-5-random-characters-in-javascript
     parts.push(str.slice(lastChar, (lastChar + charSplit)) + '<span>' + Math.random().toString(36).substring((Math.random() * 16) + 1) + '</span>'); 
     lastChar = lastChar + charSplit;
   }
