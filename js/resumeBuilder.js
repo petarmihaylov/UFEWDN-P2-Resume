@@ -4,7 +4,7 @@ var HTMLheader = '#header';
 // Bio
 var bio = {
   'name': 'Petar Mihaylov',
-  'role': 'Web Developer',
+  // 'role': '',
   'contacts': {
     'mobile': '561.342.1678',
     'email': 'petar.m@studio350.com',
@@ -21,8 +21,9 @@ var bio = {
  */
 bio.display = function () {
   // Header
-  $(HTMLheader).prepend(HTMLheaderRole.replace('%data%', bio.role));
+  // $(HTMLheader).prepend(HTMLheaderRole.replace('%data%', bio.role));
   $(HTMLheader).prepend(HTMLheaderName.replace('%data%', bio.name));
+  $('#name').wrap('<a href="https://petarmihaylov.me/"></a>');
 
   $(HTMLheader).append(HTMLbioPic.replace('%data%', bio.biopic));
   $(HTMLheader).append(HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage));
@@ -33,9 +34,16 @@ bio.display = function () {
       var contact = HTMLcontactGeneric.replace('%contact%', key);
       $('#topContacts').append(contact.replace('%data%', obfuscateContact(bio.contacts[key])));
       $('#footerContacts').append(contact.replace('%data%', obfuscateContact(bio.contacts[key])));
+      if (key == 'github') {
+         var tobeWrapped = $("span:contains('github')").siblings('.white-text').children('.obfuscate');
+         tobeWrapped.wrap('<a class=\'white-text\' href="https://www.github.com/' + bio.contacts[key] + '?tab=repositories"></a>');
+      }
     }
     //bio.contacts.hasOwnProperty(key) ? bio.displayContacts(key) : console.log("Nothing to Show"); //equivalent to above statement
   }
+
+  //Add a link to Github if it is present as contact
+
   // Display the skills
   if (bio.skills.length > 0) {
     $(HTMLheader).append(HTMLskillsStart);
@@ -241,7 +249,7 @@ function obfuscateContact(str) {
   var parts = [];
 
   while ((lastChar + charSplit) < (str.length - 1)) {
-    // The Math pert helps generate a random string of characters between 1 and 16 so the pattern is harder to discern. 
+    // The Math pert helps generate a random string of characters between 1 and 16 so the pattern is harder to discern.
     // Source: http://stackoverflow.com/questions/1349404/generate-a-string-of-5-random-characters-in-javascript
     parts.push(str.slice(lastChar, (lastChar + charSplit)) + '<span>' + Math.random().toString(36).substring((Math.random() * 16) + 1) + '</span>');
     lastChar = lastChar + charSplit;

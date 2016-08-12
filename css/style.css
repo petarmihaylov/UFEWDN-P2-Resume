@@ -112,6 +112,7 @@ a {
 .white-text {
     font-weight: bold;
     color: #fff;
+    display: inline;
 }
 
 .gray {
@@ -125,7 +126,7 @@ a {
 }
 
 #header {
-    background-color: #0F68B2;
+    background-color: #307699;
 }
 
 .flex-box {
@@ -190,6 +191,10 @@ span {
 @media only screen and (max-width: 750px) {
     #lets-connect {
         margin-top: 10%;
+    }
+
+    #header {
+      text-align: center;
     }
 
     .biopic {
