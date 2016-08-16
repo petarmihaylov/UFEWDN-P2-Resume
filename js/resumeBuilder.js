@@ -11,8 +11,9 @@ var bio = {
     'github': 'petarmihaylov',
     'location': 'North Lauderdale, FL'
   },
-  'welcomeMessage': 'Welcome to my Interactive Resume',
-  'skills': ['HTML5', 'CSS3', 'JavaScript'],
+  'welcomeMessage': '',
+  'skills': ['HTML5', 'CSS3', 'JavaScript', 'MySQL', 'Bootstrap', 'jQuery', 'Grunt'],
+  'traits': ['Detail riented', 'Highly energetic', 'Customer focused', 'Self starter'],
   'biopic': 'https://secure.gravatar.com/avatar/0eb64bd927318821e4494ec004cd5623?size=400px'
 };
 
@@ -39,10 +40,7 @@ bio.display = function () {
          tobeWrapped.wrap('<a class=\'white-text\' href="https://www.github.com/' + bio.contacts[key] + '?tab=repositories"></a>');
       }
     }
-    //bio.contacts.hasOwnProperty(key) ? bio.displayContacts(key) : console.log("Nothing to Show"); //equivalent to above statement
   }
-
-  //Add a link to Github if it is present as contact
 
   // Display the skills
   if (bio.skills.length > 0) {
@@ -54,24 +52,48 @@ bio.display = function () {
         HTMLskills.replace('%data%', bio.skills[indexCount]));
     }
   }
+
+  // Display the traits
+  if (bio.traits.length > 0) {
+    $(HTMLheader).append(HTMLtraitsStart);
+    var len = bio.traits.length;
+    for (var indexCount = 0; indexCount < len; indexCount++) {
+      $('#traits').append(
+        HTMLtraits.replace('%data%', bio.traits[indexCount]));
+    }
+  }
 };
 
 // Work Experience
 var work = {
   'jobs': [
     {
-      'employer': 'Depace Insurance and Financial Services, Inc',
-      'title': 'Account Manager (Auto and Personal Umbrella)',
-      'location': 'Coral Springs, FL',
-      'dates': 'October 2012 - May 2015',
-      'description': 'Managed client\'s personal auto and umbrella insurance needs. Provided exceptional service through personalized attention and individual recommendations. Managed over 300 auto and umbrella policies each year.'
+      'employer': 'Ultimate Software',
+      'title': 'Core Systems Specialist',
+      'location': 'Weston, FL',
+      'dates': 'May 2016 - Present',
+      'description': 'Helped clients troubleshoot workflow and security issues. Ensured that customers receive a holistic solution that satisfies ther needs resolves their issue.'
     },
     {
       'employer': 'Ultimate Software',
       'title': 'Rapid Response Professional',
       'location': 'Weston, FL',
-      'dates': 'May 2015 - Present',
+      'dates': 'September 2015 - May 2016',
       'description': 'Helped clients troubleshoot payroll critical issues. Ensured that customers achieve their business goals by helping them navigate and configure, as well as troubleshoot and maintain their UltiPro Core product.'
+    },
+    {
+      'employer': 'Ultimate Software',
+      'title': 'Rising Stars - Customer Success Specialist',
+      'location': 'Weston, FL',
+      'dates': 'May 2015 - September 2015',
+      'description': 'Successfully completed 40+ courses in UltiUniversity and secured a Rapid Response Professional position even before graduating from the program.'
+    },
+    {
+      'employer': 'Depace Insurance and Financial Services, Inc',
+      'title': 'Account Manager (Auto and Personal Umbrella)',
+      'location': 'Coral Springs, FL',
+      'dates': 'October 2012 - May 2015',
+      'description': 'Managed client\'s personal auto and umbrella insurance needs. Provided exceptional service through personalized attention and individual recommendations. Managed over 300 auto and umbrella policies each year.'
     }
   ]
 };
@@ -83,7 +105,7 @@ work.display = function () {
   var len = work.jobs.length;
   for (var iJob = 0; iJob < len; iJob++) {
     var workEntryLast = '.work-entry:last';
-    $('#workExperience').append(HTMLworkStart);
+    $('#workEntries-container').append(HTMLworkStart);
     // Chrome automatically adds a </a> tag after the HTMLworkEmployer append, so Employer and Title need to be concatenated and added with one append()
     $(workEntryLast).append(
       HTMLworkEmployer.replace('%data%', work.jobs[iJob].employer) +
@@ -133,7 +155,7 @@ projects.display = function () {
 
   var len = projects.projects.length;
   for (var iProject = 0; iProject < len; iProject++) {
-    $('#projects').append(HTMLprojectStart);
+    $('#projectEntries-container').append(HTMLprojectStart);
     $(selectorProjectEntryLast).append(
       HTMLprojectTitle.replace('%data%', projects.projects[iProject].title)
     );
@@ -192,7 +214,7 @@ var education = {
  * @description Displays the higher education schools experience
  */
 education.display = function () {
-  var selectorEducation = '#education';
+  var selectorEducation = '#educationEntries-container';
   var selectorEducationLast = '.education-entry:last';
 
   var len = education.schools.length;
@@ -218,18 +240,21 @@ education.display = function () {
     }
   }
 
-  $(selectorEducation).append(HTMLonlineClasses);
+//  $(selectorEducation).append(HTMLonlineClasses);
+  var selectorOnlineCourse = '#onlineCoursesEntries-container';
+  var selectorOnlineCourseLast = '.onlineCourse-entry:last';
+
   var lenOnlineClasses = education.onlineCourses.length;
   for (var iOnlineClass = 0; iOnlineClass < lenOnlineClasses; iOnlineClass++) {
-    $(selectorEducation).append(HTMLschoolStart);
-    $(selectorEducationLast).append(
+    $(selectorOnlineCourse).append(HTMLonlineClassStart);
+    $(selectorOnlineCourseLast).append(
       HTMLonlineTitle.replace('%data%', education.onlineCourses[iOnlineClass].title) +
       HTMLonlineSchool.replace('%data%', education.onlineCourses[iOnlineClass].school)
     );
-    $(selectorEducationLast).append(
+    $(selectorOnlineCourseLast).append(
       HTMLonlineDates.replace('%data%', education.onlineCourses[iOnlineClass].date)
     );
-    $(selectorEducationLast).append(
+    $(selectorOnlineCourseLast).append(
       HTMLonlineURL.replace('%data%', education.onlineCourses[iOnlineClass].url)
     );
   }
