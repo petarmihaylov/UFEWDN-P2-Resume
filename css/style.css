@@ -11,7 +11,7 @@ h5,
 h6 {
     padding: 0;
     margin: 0;
-    font-family: "Roboto", sans-serif;
+    font-family: "Source Sans Pro", sans-serif;
 }
 
 .clear-fix {
@@ -20,7 +20,8 @@ h6 {
 
 .education-entry,
 .work-entry,
-.project-entry {
+.project-entry,
+.onlineCourse-entry {
     padding: 0 5%;
 }
 
@@ -89,6 +90,11 @@ a {
     display: block;
 }
 
+#main {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
 .welcome-message {
     font-style: italic;
     font-size: 18px;
@@ -96,7 +102,8 @@ a {
     line-height: 28px;
 }
 
-#skills-h3 {
+#skills-h3,
+#traits-h3 {
     color: #f5ae23;
     display: none;
 }
@@ -148,14 +155,27 @@ ul {
 
 .biopic {
     float: left;
-    padding: 10px;
     width: 200px;
     display: none;
-    border-radius: 10%;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin: 10px 20px 10px 0;
 }
 
-img {
-    padding: 10px;
+.pure-img,
+.gm-style {
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(209,209,209,1);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(209,209,209,1);
+    box-shadow: 5px 5px 5px 0px rgba(209,209,209,1);
+}
+
+.project-img {
+  margin: 0 auto;
+  display: block;
+}
+
+.project-description {
+  margin-bottom: 10px;
 }
 
 span {
@@ -216,26 +236,33 @@ span {
     height: 400px;
     width: 100%;
     padding-bottom: 5%;
+    margin-bottom: 20px;
 }
 
 @media only screen and (min-width: 750px) {
     #skills-h3,
+    #traits-h3,
     .biopic {
         display: block;
     }
 }
 
-@media only screen and (min-width: 1250px) {
-    #workExperience, #projects {
+@media only screen and (min-width: 750px) {
+    #workEntries-container,
+    #projectEntries-container,
+    #educationEntries-container,
+    #onlineCoursesEntries-container {
         display: -webkit-flex;
         display: flex;
         flex-direction: row;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         justify-content: space-around;
-        padding: 10px;
     }
 
-    .work-entry, .project-entry {
-        width: 50%;
+    .work-entry,
+    .project-entry,
+    .education-entry,
+    .onlineCourse-entry {
+      width: 40%;
     }
 }
