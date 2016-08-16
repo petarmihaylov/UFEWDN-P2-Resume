@@ -24,7 +24,7 @@ bio.display = function () {
   // Header
   // $(HTMLheader).prepend(HTMLheaderRole.replace('%data%', bio.role));
   $(HTMLheader).prepend(HTMLheaderName.replace('%data%', bio.name));
-  $('#name').wrap('<a href="https://petarmihaylov.me/"></a>');
+  $('#name').wrap('<a href="../.."></a>');
 
   $(HTMLheader).append(HTMLbioPic.replace('%data%', bio.biopic));
   $(HTMLheader).append(HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage));
