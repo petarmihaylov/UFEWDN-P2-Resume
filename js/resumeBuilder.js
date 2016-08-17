@@ -72,7 +72,7 @@ var work = {
       'title': 'Core Systems Specialist',
       'location': 'Weston, FL',
       'dates': 'May 2016 - Present',
-      'description': 'Helped clients troubleshoot workflow and security issues. Ensured that customers receive a holistic solution that satisfies ther needs resolves their issue.'
+      'description': 'Help clients troubleshoot workflow and security issues. Ensur that customers receive a holistic solution that satisfies their needs resolves their issue.'
     },
     {
       'employer': 'Ultimate Software',
