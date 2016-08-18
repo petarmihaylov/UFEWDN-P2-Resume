@@ -146,6 +146,13 @@ var projects = {
       'description': 'Fully custom and responsive design for QuoteRush.com. Redesigned the entire website from the ground up. <p><strong>Note:</strong> The customer maintains the website and has now made changes to the original design and content, which has broken some of the functionality and visual elements.</p>',
       'images': ['images/projects/quoterush.com-thumb.png'],
       'link': 'http://quoterush.com'
+    },
+    {
+      'title': 'Classic Arcade Game Clone',
+      'dates': 'January 2016',
+      'description': 'A clone of the classic Frogger arcade game. Written purely in JavaScript. The point of the project is to highlight object orientation and parametarization.',
+      'images': ['images/projects/classic-arcade-game-clone-thumb.png'],
+      'link': '../classic-arcade-game-clone'
     }
   ]
 };
