@@ -72,7 +72,7 @@ var work = {
       'title': 'Core Systems Specialist',
       'location': 'Weston, FL',
       'dates': 'May 2016 - Present',
-      'description': 'Helped clients troubleshoot workflow and security issues. Ensured that customers receive a holistic solution that satisfies ther needs resolves their issue.'
+      'description': 'Help clients troubleshoot workflow and security issues. Ensur that customers receive a holistic solution that satisfies their needs resolves their issue.'
     },
     {
       'employer': 'Ultimate Software',
@@ -130,19 +130,29 @@ var projects = {
       'title': 'Yencies.com',
       'dates': 'January 2013',
       'description': 'Created a WordPress powered promotional website for Yencies - a company that makes hand made jewelry and accessories. The website promotes their hand-made, unique jewelry designs.',
-      'images': ['images/projects/yencies.com-thumb.png']
+      'images': ['images/projects/yencies.com-thumb.png'],
+      'link': 'http://yencies.com'
     },
     {
       'title': 'MishelFit.com',
       'dates': 'May 2015',
       'description': 'Fully custom and responsive design of a landing page for MishelFit.com. Simple, elegant, and effective. The page includes a newsletter sign up form and an Instagram feed.',
-      'images': ['images/projects/mishelfit.com-thumb.png']
+      'images': ['images/projects/mishelfit.com-thumb.png'],
+      'link': 'http://mishelfit.com'
     },
     {
       'title': 'QuoteRush.com',
       'dates': 'December 2014',
-      'description': 'Fully custom and responsive design for QuoteRush.com. Redesigned the entire website from the ground up. The customer maintains the website and has now made changes to the original design and content.',
-      'images': ['images/projects/quoterush.com-thumb.png']
+      'description': 'Fully custom and responsive design for QuoteRush.com. Redesigned the entire website from the ground up. <p><strong>Note:</strong> The customer maintains the website and has now made changes to the original design and content, which has broken some of the functionality and visual elements.</p>',
+      'images': ['images/projects/quoterush.com-thumb.png'],
+      'link': 'http://quoterush.com'
+    },
+    {
+      'title': 'Classic Arcade Game Clone',
+      'dates': 'January 2016',
+      'description': 'A clone of the classic Frogger arcade game. Written purely in JavaScript. The point of the project is to highlight object orientation and parametarization.',
+      'images': ['images/projects/classic-arcade-game-clone-thumb.png'],
+      'link': '../classic-arcade-game-clone'
     }
   ]
 };
@@ -157,7 +167,9 @@ projects.display = function () {
   for (var iProject = 0; iProject < len; iProject++) {
     $('#projectEntries-container').append(HTMLprojectStart);
     $(selectorProjectEntryLast).append(
-      HTMLprojectTitle.replace('%data%', projects.projects[iProject].title)
+      HTMLprojectTitle.replace(
+        '%data%', projects.projects[iProject].title).replace(
+        '%link%', projects.projects[iProject].link)
     );
     $(selectorProjectEntryLast).append(
       HTMLprojectDates.replace('%data%', projects.projects[iProject].dates)
@@ -168,7 +180,9 @@ projects.display = function () {
 
     for (var image = 0; image < projects.projects[iProject].images.length; image++) {
       $(selectorProjectEntryLast).append(
-        HTMLprojectImage.replace('%data%', projects.projects[iProject].images[image])
+        HTMLprojectImage.replace(
+          '%data%', projects.projects[iProject].images[image]).replace(
+          '%link%', projects.projects[iProject].link)
       );
     }
   }
