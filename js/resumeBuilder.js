@@ -201,7 +201,7 @@ var education = {
     {
       'name': 'Florida Atlantic University',
       'location': 'Boca Raton, FL',
-      'degree': 'Bachelor\'s Degree',
+      'degree': 'Pursued a Bachelor\s Degree - Not Completed',
       'majors': ['International Economics'],
       'dates': 'May 2005 - December 2008',
       'url': 'http://www.fau.edu'
@@ -209,13 +209,67 @@ var education = {
     {
       'name': 'Broward College',
       'location': 'Coconut Creek, FL',
-      'degree': 'Associates Degree',
+      'degree': 'Pursued an Associate\s Degree - Not Completed',
       'majors': ['Computer Science'],
       'dates': 'December 2012 - May 2013',
       'url': 'http://www.broward.edu'
     }
   ],
   'onlineCourses': [
+    {
+      'title': 'Intro to Ajax',
+      'school': 'Udacity',
+      'date': 'June 2016',
+      'url': 'http://udacity.com'
+    },
+    {
+      'title': 'Browser Rendering Optimization',
+      'school': 'Udacity',
+      'date': 'June 2016',
+      'url': 'http://udacity.com'
+    },
+    {
+      'title': 'Website performance Optimization',
+      'school': 'Udacity',
+      'date': 'June 2016',
+      'url': 'http://udacity.com'
+    },
+    {
+      'title': 'HTML5 Canvas',
+      'school': 'Udacity',
+      'date': 'June 2016',
+      'url': 'http://udacity.com'
+    },
+    {
+      'title': 'Object Oriented JavaScript',
+      'school': 'Udacity',
+      'date': 'June 2016',
+      'url': 'http://udacity.com'
+    },
+    {
+      'title': 'Intro to jQuery',
+      'school': 'Udacity',
+      'date': 'June 2016',
+      'url': 'http://udacity.com'
+    },
+    {
+      'title': 'JavaScript Basics',
+      'school': 'Udacity',
+      'date': 'May 2016',
+      'url': 'http://udacity.com'
+    },
+    {
+      'title': 'Responsive Images',
+      'school': 'Udacity',
+      'date': 'May 2016',
+      'url': 'http://udacity.com'
+    },
+    {
+      'title': 'Responsive Web Design Fundamentals',
+      'school': 'Udacity',
+      'date': 'May 2016',
+      'url': 'http://udacity.com'
+    },
     {
       'title': 'Intro to HTML and CSS',
       'school': 'Udacity',
