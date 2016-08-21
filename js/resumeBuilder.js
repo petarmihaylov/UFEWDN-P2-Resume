@@ -275,12 +275,6 @@ var education = {
       'school': 'Udacity',
       'date': 'December 2015',
       'url': 'http://udacity.com'
-    },
-    {
-      'title': 'The Complete Web Developer Course',
-      'school': 'Udemy',
-      'date': 'May 2015',
-      'url': 'https://www.udemy.com/complete-web-developer-course/learn/'
     }
   ]
 };
