@@ -153,6 +153,13 @@ var projects = {
       'description': 'A clone of the classic Frogger arcade game. Written purely in JavaScript. The point of the project is to highlight object orientation and parametarization.',
       'images': ['images/projects/classic-arcade-game-clone-thumb.png'],
       'link': '../classic-arcade-game-clone'
+    },
+    {
+      'title': 'Website Optimization',
+      'dates': 'July 2016',
+      'description': 'Optimization of the Critical Rendering Path (CRP) and JavaScript code optimization to maintain a refresh rate of 60 frames per second.',
+      'images': ['images/projects/website-optimization-thumb.png'],
+      'link': '../website-optimization'
     }
   ]
 };
