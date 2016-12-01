@@ -160,6 +160,13 @@ var projects = {
       'description': 'Optimization of the Critical Rendering Path (CRP) and JavaScript code optimization to maintain a refresh rate of 60 frames per second.',
       'images': ['images/projects/website-optimization-thumb.png'],
       'link': '../website-optimization'
+    },
+    {
+      'title': 'Neighborhood Map',
+      'dates': 'November 2016',
+      'description': 'Utilizes the Google Maps API as well as FourSquare APIs to pull data. Firebase backed. Built with KnockoutJS and RequireJS for modularity and separation of concerns in mind.',
+      'images': ['images/projects/neighborhood-map-thumb.png'],
+      'link': '../neighborhood-map'
     }
   ]
 };
