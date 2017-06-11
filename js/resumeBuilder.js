@@ -9,7 +9,7 @@ var bio = {
     'mobile': '561.342.1678',
     'email': 'petar.m@studio350.com',
     'github': 'petarmihaylov',
-    'location': 'North Lauderdale, FL'
+    'location': 'Smyrna, GA'
   },
   'welcomeMessage': '',
   'skills': ['HTML5', 'CSS3', 'JavaScript', 'MySQL', 'Bootstrap', 'jQuery', 'Grunt'],
